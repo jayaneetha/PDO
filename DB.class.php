@@ -60,9 +60,9 @@ class DB {
         if (count($where) === 3) {
             $operators = array('=', '>', '<', '>=', '<=', 'LIKE');
 
-            $where_field = $where[0];
-            $where_operator = $where[1];
-            $where_value = $where[2];
+            $where_field = (!empty($where[0])) ? $where[0] : '';
+            $where_operator = (!empty($where[1])) ? $where[1] : '';
+            $where_value = (!empty($where[2])) ? $where[2] : '';
 
             $orderBy_field = NULL;
             $orderBy_direction = 'ASC';
@@ -166,9 +166,9 @@ class DB {
 
         $operators = array('=', '>', '<', '>=', '<=', 'LIKE');
 
-        $where_field = $where[0];
-        $where_operator = $where[1];
-        $where_value = $where[2];
+        $where_field = (!empty($where[0])) ? $where[0] : '';
+        $where_operator = (!empty($where[1])) ? $where[1] : '';
+        $where_value = (!empty($where[2])) ? $where[2] : '';
 
         foreach ($array_data as $name => $value) {
             $set .="{$name} = '{$value}'";
